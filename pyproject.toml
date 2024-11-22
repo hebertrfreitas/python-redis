@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "python-redis"
+version = "0.1.0"
+description = ""
+authors = ["Hebert Freitas <hebertrfreitas@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["standard"], version = "^0.115.5"}
+redis = "^5.2.0"
+requests = "^2.32.3"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.7.4"
+pytest = "^8.3.3"
+
+[tool.ruff]
+# List of enabled rules (you can specify specific rules or rule categories)
+lint.select = ["E", "F", "W", "C", "N", "Q"]
+
+# Exclude specific files or directories
+exclude = [".venv", "tests/", "migrations/"]
+
+# Maximum allowed line length
+line-length = 88
+
+# Enable autofix for certain rules
+fix = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
